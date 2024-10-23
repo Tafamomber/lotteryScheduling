@@ -25,3 +25,20 @@ Defined a new syscall number SYS_getpinfo to identify the new system call.
 5. user.h
 Function Prototype Added:
 Added a prototype for getpinfo() in the user-level header file to allow user programs to call this system call.
+
+
+RESULTS
+-Average Turn around time(ms)
+    5 processes-12 ms
+    10- 17 ms
+    15- 24 ms
+    20- 26 ms
+    25- 30 ms
+    30- 34 ms
+-Average Wait time (ms)
+    5 processes-11 ms
+    10-16 ms
+    15-24.5 ms
+    20-27ms
+    25-31 ms
+    30-34ms
