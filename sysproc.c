@@ -137,6 +137,7 @@ uint64 sys_getpinfo(void) {
             pstat[i].inuse = 1;
             pstat[i].pid = p->pid;
             pstat[i].tickets = p->tickets;
+            pstat->ticks[i] = p->ticks;
             
         } else {
             pstat[i].inuse = 0; 
