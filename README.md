@@ -26,7 +26,24 @@ Defined a new syscall number SYS_getpinfo to identify the new system call.
 Function Prototype Added:
 Added a prototype for getpinfo() in the user-level header file to allow user programs to call this system call.
 
+Code Modifications
+proc.c
 
+settickets() Function: Allows processes to set their ticket count.
+allocproc(): Adds p->tickets = 1; to initialize new processes with 1 ticket.
+scheduler(): Updated to randomly select a process to run based on its ticket count.
+sysproc.c
+
+System Call sys_getpinfo(): Retrieves information on active processes.
+syscall.c
+
+New Declarations and Syscall Table Update: Registers sys_getpinfo.
+defs.h
+
+New Syscall Number: Defines SYS_getpinfo.
+user.h
+
+Function Prototype: Adds prototype for getpinfo().
 RESULTS
 -Average Turn around time(ms)
     5 processes-12 ms
