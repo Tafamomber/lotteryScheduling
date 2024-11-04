@@ -111,5 +111,6 @@ struct pstat {
     int inuse;          
     int pid;           
     int tickets;       
-    int priority;      
+    int priority;
+    int ticks;
 };
