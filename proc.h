@@ -84,6 +84,7 @@ enum procstate { UNUSED, USED, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 // Per-process state
 struct proc {
   struct spinlock lock;
+  
 
   // p->lock must be held when using these:
   enum procstate state;        // Process state
@@ -103,11 +104,9 @@ struct proc {
   struct context context;      // swtch() here to run process
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
-  char name[16];               // Process name (debugging)
+  char name[16];
+  int tickets;
 };
-struct proc{
-  int tickets; 
-}
 struct pstat {
     int inuse;          
     int pid;           
