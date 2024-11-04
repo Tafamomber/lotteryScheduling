@@ -108,9 +108,9 @@ struct proc {
   int tickets;
 };
 struct pstat {
-    int inuse;          
-    int pid;           
-    int tickets;       
-    int priority;
-    int ticks;
+    int inuse[NPROC];          
+    int pid[NPROC];           
+    int tickets[NPROC];       
+    int priority[NPROC];
+    int ticks[NPROC];
 };
